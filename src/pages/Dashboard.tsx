@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { AlertTriangle, MapPin, FileText, Radio, Loader2 } from "lucide-react";
+import { AlertTriangle, MapPin, FileText, Radio, ShieldAlert } from "lucide-react";
 import { DashboardSkeleton } from "@/components/LoadingSkeleton";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -20,7 +20,7 @@ const statusColors: Record<string, string> = {
 };
 
 const Dashboard = () => {
-  const { user } = useAuth();
+  const { user, isAdmin } = useAuth();
   const navigate = useNavigate();
   const [alerts, setAlerts] = useState<Tables<"alerts">[]>([]);
   const [reports, setReports] = useState<Tables<"incident_reports">[]>([]);
@@ -84,20 +84,41 @@ const Dashboard = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <SOSButton />
-          <Card className="gradient-card border-border">
-            <CardHeader><CardTitle className="text-lg">Quick Actions</CardTitle></CardHeader>
-            <CardContent className="space-y-2">
-              <Button variant="outline" className="w-full justify-start" onClick={() => navigate("/dashboard/report")}>
-                <FileText className="h-4 w-4 mr-2" /> Report an Incident
-              </Button>
-              <Button variant="outline" className="w-full justify-start" onClick={() => navigate("/dashboard/map")}>
-                <MapPin className="h-4 w-4 mr-2" /> View Alert Map
-              </Button>
-              <Button variant="outline" className="w-full justify-start" onClick={() => navigate("/dashboard/alerts")}>
-                <AlertTriangle className="h-4 w-4 mr-2" /> View All Alerts
-              </Button>
-            </CardContent>
-          </Card>
+          
+          {isAdmin && (
+            <Card className="gradient-card border-border border-primary/50 shadow-[0_0_15px_rgba(239,68,68,0.15)]">
+              <CardHeader className="pb-2">
+                <CardTitle className="text-lg flex items-center gap-2 text-primary">
+                  <ShieldAlert className="h-5 w-5" /> Admin Quick Actions
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-3 pt-2">
+                <Button className="w-full justify-start gradient-emergency text-white shadow-md shadow-primary/20" onClick={() => navigate("/admin/post-alert")}>
+                  <AlertTriangle className="h-4 w-4 mr-2" /> + Post Urgent Alert
+                </Button>
+                <Button variant="outline" className="w-full justify-start bg-secondary/50 border-primary/30 text-primary hover:bg-primary/10" onClick={() => navigate("/admin")}>
+                  <ShieldAlert className="h-4 w-4 mr-2" /> Go to Full Admin Dashboard
+                </Button>
+              </CardContent>
+            </Card>
+          )}
+
+          {!isAdmin && (
+            <Card className="gradient-card border-border">
+              <CardHeader><CardTitle className="text-lg">Quick Actions</CardTitle></CardHeader>
+              <CardContent className="space-y-2">
+                <Button variant="outline" className="w-full justify-start" onClick={() => navigate("/dashboard/report")}>
+                  <FileText className="h-4 w-4 mr-2" /> Report an Incident
+                </Button>
+                <Button variant="outline" className="w-full justify-start" onClick={() => navigate("/dashboard/map")}>
+                  <MapPin className="h-4 w-4 mr-2" /> View Alert Map
+                </Button>
+                <Button variant="outline" className="w-full justify-start" onClick={() => navigate("/dashboard/alerts")}>
+                  <AlertTriangle className="h-4 w-4 mr-2" /> View All Alerts
+                </Button>
+              </CardContent>
+            </Card>
+          )}
         </div>
 
         {/* My incident reports */}

@@ -16,7 +16,7 @@ const userLinks = [
 ];
 
 const adminLinks = [
-  { label: "Admin Panel", href: "/admin", icon: ShieldAlert },
+  { label: "Admin Dashboard", href: "/admin", icon: ShieldAlert },
   { label: "Analytics", href: "/admin/analytics", icon: BarChart3 },
   { label: "Post Alert", href: "/admin/post-alert", icon: AlertTriangle },
   { label: "Reports", href: "/admin/reports", icon: FileText },
