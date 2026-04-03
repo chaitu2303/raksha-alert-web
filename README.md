@@ -1,73 +1,74 @@
-# Welcome to your Lovable project
+# Raksha Alert – Emergency Safety Alert System
 
-## Project info
+**Raksha Alert** is a real-time safety monitoring system where users report incidents with location data, an admin verifies them, and alerts are sent to nearby users to improve public safety and awareness.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+## ⚙️ Full Working Process (Step-by-Step 🔥)
 
-## How can I edit this code?
+### 🟢 STEP 1: User Registration/Login
+- User account create chesthadu
+- Login ayyi system lo enter avuthadu
 
-There are several ways of editing your application.
+### 🟢 STEP 2: Incident Reporting
+- User "Report Incident" click chesthadu
+- Details fill chesthadu:
+  - Type
+  - Description
+  - Image
+- Location:
+  - Auto detect (GPS) OR 
+  - Manual map select
+  
+👉 **Data backend ki send avutundi**
 
-**Use Lovable**
+### 🟢 STEP 3: Data Storage
+- Backend data receive chesthundi
+- Database lo store chesthundi (Pending status)
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+### 🟢 STEP 4: Admin Verification 🔥 (IMPORTANT)
+- Admin dashboard lo report kanipistundi
+- Admin:
+  - Check details
+  - Approve / Reject
 
-Changes made via Lovable will be committed automatically to this repo.
+### 🟢 STEP 5: After Approval
+- Incident map lo display avutundi
+- Public ki visible
 
-**Use your preferred IDE**
+### 🟢 STEP 6: Alert System
+- Nearby users ki notification veltundi
+- "Danger Alert" message vastundi
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### 🟢 STEP 7: Map Visualization
+- Users map open chesthe:
+  - All incidents markers
+  - Safe/Unsafe zones
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### 🟢 STEP 8: Communication
+- User ↔ Admin chat
+- Help request
 
-Follow these steps:
+### 🟢 STEP 9: Continuous Monitoring
+- Admin:
+  - Track incidents
+  - Manage users
+  - Send alerts
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+---
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+## 🔄 Complete Flow (Short Version 🔥)
 
-# Step 3: Install the necessary dependencies.
-npm i
+👉 **User** → Report  
+👉 **Backend** → Store  
+👉 **Admin** → Verify  
+👉 **System** → Publish  
+👉 **Users** → Receive Alert
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+---
 
 ## What technologies are used for this project?
-
 This project is built with:
-
-- Vite
-- TypeScript
 - React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+- Next.js / Vite
+- TypeScript
+- Supabase (Backend & Database)
+- Tailwind CSS & shadcn-ui
