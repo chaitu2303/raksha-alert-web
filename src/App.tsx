@@ -19,6 +19,10 @@ import AdminReports from "./pages/AdminReports.tsx";
 import AdminFeedback from "./pages/AdminFeedback.tsx";
 import AdminAnalytics from "./pages/AdminAnalytics.tsx";
 import AdminSettings from "./pages/AdminSettings.tsx";
+import AdminUsers from "./pages/AdminUsers.tsx";
+import TeamPage from "./pages/TeamPage.tsx";
+import NotFound from "./pages/NotFound.tsx";
+import SafetyChatbot from "./components/SafetyChatbot.tsx";
 
 const queryClient = new QueryClient();
 
