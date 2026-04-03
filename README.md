@@ -65,6 +65,83 @@
 
 ---
 
+## 🚨 Admin Can Create Alerts (Core Functionality)
+
+### 🧠 What is Admin Alert?
+- 👉 Admin create chese official notification / warning
+- 👉 Incident lekunda kuda alert pampachu
+
+### ⚙️ How It Works
+
+**🟢 1. Create Alert (Admin Panel)**
+- Admin dashboard lo:
+  - “📢 Create Alert” button
+- Fields:
+  - Title
+  - Message
+  - Location (optional)
+  - Alert Type
+
+**🟢 2. Alert Types**
+- 🔴 Emergency Alert (High priority)
+- ⚠️ Warning Alert
+- ℹ️ Information Alert
+
+**🟢 3. Target Audience**
+- Admin decide cheyachu:
+  - All users
+  - Specific area users
+  - Nearby users (location-based)
+
+**🟢 4. Instant Notification 🔥**
+- Push notification veltundi
+- App lo alert popup
+- Map lo highlight (if location based)
+
+**🟢 5. Alert Visibility**
+- Users alert history lo store avutundi
+- Dashboard lo display avutundi
+
+### 🔄 System Flow
+Admin → Create Alert → Backend → Users receive notification
+
+### 🗄️ Database Structure
+**📢 Alerts Table**
+- alert_id
+- title
+- message
+- type (Emergency/Warning/Info)
+- location
+- created_by (Admin)
+- timestamp
+
+### 💡 Difference: Incident vs Alert
+| Feature | Incident | Alert |
+|---------|----------|-------|
+| **Who creates** | User/Admin | Admin only |
+| **Needs verification** | Yes (user cases) | No |
+| **Purpose** | Report event | Notify users |
+| **Speed** | Medium | Instant |
+
+### 🛠️ UI Features
+**Admin Panel:**
+- ➕ Create Alert
+- Alert history
+- Delete / Edit alerts
+
+**User Side:**
+- 🔔 Notification popup
+- Alerts list
+- Map highlight
+
+### 🚀 Advanced Features
+- 🔊 Sound alert
+- 📍 Geo-fencing alerts
+- ⏰ Scheduled alerts
+- 📲 SMS integration
+
+---
+
 ## What technologies are used for this project?
 This project is built with:
 - React
